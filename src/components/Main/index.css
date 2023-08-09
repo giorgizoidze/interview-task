@@ -1,0 +1,60 @@
+@import "tailwindcss/components";
+
+@layer components {
+  .btn {
+    @apply xl:h-businessCategoryButtonDesktop xl:w-auto w-businessCategoryButton h-businessCategoryButtonDesktop bg-white text-secondary opacity-80 font-bold xl:p-businessCategoryButton p-3 xl:text-xs text-sm flex items-center justify-center xl:rounded-xl xl:border xl:border-opacity-10;
+  }
+
+  .btn-active {
+    @apply xl:text-white text-soft xl:bg-soft xl:border-none border-b-2 border-purple;
+  }
+
+  .company-column {
+    @apply flex flex-col xl:h-companyColumn justify-between xl:gap-0 gap-2.5;
+  }
+}
+
+.business-category-picker-wrapper {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.business-category-picker-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.ant-switch {
+  border: 2px solid #a39cb5;
+}
+
+.ant-switch-checked {
+  border: 2px solid #9d71fd;
+}
+
+.ant-switch:hover:not(.ant-switch-disabled) {
+  background: none;
+}
+
+.ant-switch.ant-switch-checked,
+.ant-switch.ant-switch-checked:hover {
+  background-color: #9d71fd;
+}
+
+.ant-switch-handle {
+  background-color: #a39cb5;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50%;
+}
+
+.ant-switch-checked .ant-switch-handle {
+  background-color: white;
+}
+
+.ant-switch-handle::before {
+  display: none;
+}
+
+.ant-switch.ant-switch-small.ant-switch-checked .ant-switch-handle {
+  inset-inline-start: calc(100% - 10px);
+}
