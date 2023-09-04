@@ -16,7 +16,7 @@ export const BusinessCategoryPicker = () => {
 
   return (
     <div className="business-category-picker-wrapper">
-      <div className="bigMobile:w-full mobile:w-businessCategoryPicker  flex justify-center xl:gap-2 xl:border-none border-b">
+      <div className="bigMobile:w-full mobile:w-businessCategoryPicker flex justify-center xl:gap-2 xl:border-none border-b">
         <button
           className={`btn ${isSmallActive ? "btn-active" : ""}`}
           onClick={() => handleButtonClick(businessLevel.small)}

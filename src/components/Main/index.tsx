@@ -1,14 +1,13 @@
-import { useAppSelector } from "../../app/hooks";
 import { BusinessCategoryPicker } from "./components/BusinessCategoryPicker";
 import { Company } from "./components/Company";
-import { LinesImage } from "./components/LinesImage";
 import { FlowNode } from "./components/FlowNode";
-import { companies } from "./helper";
+import { useAppSelector } from "../../app/hooks";
+import { LineImages } from "./components/LineImages";
 
 import "./index.css";
 
 export const Main = () => {
-  const level = useAppSelector((state) => state.business.level);
+  const companies = useAppSelector((state) => state.business.companies);
 
   return (
     <div className="flex flex-col xl:gap-20 gap-16 w-full">
@@ -22,17 +21,12 @@ export const Main = () => {
                 name={val.name}
                 position={val.position}
                 imgSrc={val.imgSrc}
-                isChecked={level === val.level}
               />
             ))}
           </div>
-          <LinesImage type="small" imageName="emptyLeft" />
-          <LinesImage type="medium" imageName="medium" />
-          <LinesImage type="enterprise" imageName="enterpriseLeft" />
+          <LineImages side="left" />
           <FlowNode />
-          <LinesImage type="small" imageName="small" />
-          <LinesImage type="medium" imageName="emptyright" />
-          <LinesImage type="enterprise" imageName="enterpriseRight" />
+          <LineImages side="right" />
           <div className="company-column order-3">
             {companies.slice(3).map((val) => (
               <Company
@@ -40,7 +34,6 @@ export const Main = () => {
                 name={val.name}
                 position={val.position}
                 imgSrc={val.imgSrc}
-                isChecked={level === val.level}
               />
             ))}
           </div>

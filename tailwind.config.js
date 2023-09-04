@@ -10,8 +10,9 @@ export default {
       colors: {
         primary: "#1A0745",
         secondary: "#5F517D",
-        soft: "#9D71FD",
         light: "#f2effe",
+        purple: "#9D71FD",
+        lightPurple: "#D7CFFD",
       },
       fontSize: {
         heading: "64px",
@@ -22,6 +23,8 @@ export default {
         businessCategoryPicker: "441px",
         businessCategoryButton: "147px",
         portraitImage: "86px",
+        lines: "120px",
+        topLine: "60px",
       },
       height: {
         headerDesktop: "165px",
@@ -31,9 +34,8 @@ export default {
         flowNode: "268px",
         integrationflow: "280px",
         portraitImage: "86px",
-      },
-      borderColor: {
-        purple: "#9D71FD",
+        lines: "201px",
+        topLine: "99.5px",
       },
       lineHeight: {
         headingDesktop: "130%",

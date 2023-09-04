@@ -6,7 +6,7 @@
   }
 
   .btn-active {
-    @apply xl:text-white text-soft xl:bg-soft xl:border-none border-b-2 border-purple;
+    @apply xl:text-white text-purple xl:bg-purple xl:border-none border-b-2 border-purple;
   }
 
   .company-column {
@@ -37,7 +37,7 @@
 
 .ant-switch.ant-switch-checked,
 .ant-switch.ant-switch-checked:hover {
-  background-color: #9d71fd;
+  background-color: #9d71fd !important;
 }
 
 .ant-switch-handle {

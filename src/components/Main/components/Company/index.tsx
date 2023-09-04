@@ -1,22 +1,35 @@
 import { Switch } from "antd";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import { updateCompanyBusinessLevel } from "../../../../features/business/businessLevelSlice";
 
 interface CompanyProps {
   name: string;
   position: string;
   imgSrc: string;
-  isChecked: boolean;
 }
 
-export const Company: React.FC<CompanyProps> = ({
-  name,
-  position,
-  imgSrc,
-  isChecked,
-}) => {
+export const Company: React.FC<CompanyProps> = ({ name, position, imgSrc }) => {
+  const dispatch = useAppDispatch();
+  const level = useAppSelector((state) => state.business.level);
+  const companies = useAppSelector((state) => state.business.companies);
+
+  const isCompanyChecked = companies.some(
+    (c) => c.name === name && c.level === level
+  );
+
+  const handleChange = (isChecked: boolean, name: string) => {
+    dispatch(
+      updateCompanyBusinessLevel({
+        name,
+        isChecked,
+      })
+    );
+  };
+
   return (
     <div
       className={`h-20 xl:w-company w-full rounded-xl pl-4 pr-5 border-2 py-4 order-1 ${
-        isChecked ? "border-purple" : ""
+        isCompanyChecked ? "border-purple" : ""
       }`}
     >
       <div className="flex items-center justify-between">
@@ -29,7 +42,11 @@ export const Company: React.FC<CompanyProps> = ({
             </span>
           </div>
         </div>
-        <Switch checked={isChecked} size="small" disabled />
+        <Switch
+          size="small"
+          onChange={(checked) => handleChange(checked, name)}
+          checked={isCompanyChecked}
+        />
       </div>
     </div>
   );
