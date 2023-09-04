@@ -1,10 +1,8 @@
-import { BottomLeft } from "./components/BottomLeft";
-import { BottomRight } from "./components/BottomRight";
+import { Bottom } from "./components/Bottom";
 import { MiddleLeftEnd } from "./components/MiddleLeftEnd";
 import { MiddleRightEnd } from "./components/MiddleRightEnd";
 import { MiddleStart } from "./components/MiddleStart";
-import { TopLeft } from "./components/TopLeft";
-import { TopRight } from "./components/TopRight";
+import { Top } from "./components/Top";
 
 interface LineImagesProps {
   side: "left" | "right";
@@ -18,7 +16,7 @@ export const LineImages: React.FC<LineImagesProps> = ({ side }) => {
           side === "right" ? "justify-end" : ""
         }`}
       >
-        {side === "left" ? <TopLeft /> : <TopRight />}
+        {side === "left" ? <Top side="left" /> : <Top side="right" />}
       </div>
       <div className="flex">
         {side === "left" ? (
@@ -38,7 +36,7 @@ export const LineImages: React.FC<LineImagesProps> = ({ side }) => {
           side === "right" ? "justify-end" : ""
         }`}
       >
-        {side === "left" ? <BottomLeft /> : <BottomRight />}
+        {side === "left" ? <Bottom side="left" /> : <Bottom side="right" />}
       </div>
     </div>
   );
